@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "53eab8f8-5e69-49b4-88df-7dbc4813b709",
+		"name": "Dimofinf Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15462938"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"01064323735\",\r\n    \"username\": \"mohamedmaher5\",\r\n    \"email\": \"mohamedmaher055@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"password_confirmation\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"01064323735\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/posts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Post title\",\r\n    \"description\": \"Post description\",\r\n    \"contact_phone\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/posts/store",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profile",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDg3OTNlNDNhMjc1MjlmMGIxODEyNWZmZjUwYTkzOWZkMjYzNTAzNWI0ODZiMTE1NDJlM2I4ZWQ4MzA1Y2RmMWEyMWYzMDA0OGIwOTU1YjUiLCJpYXQiOjE3MTM3MzEyMDAuODk2MzQ1LCJuYmYiOjE3MTM3MzEyMDAuODk2MzUzLCJleHAiOjE3NDUyNjcyMDAuODczNjE4LCJzdWIiOiIxMyIsInNjb3BlcyI6W119.PAIYQygmCMacSOuRp2Iio3O2R7WL7N79NCw2dkE5xj3G79hRVQFmR8mp6JSl6kQh_HNp7E2aF4mVhOSZ7o2PM4wxCfPcBFFzPSrlFvhIAmjtzgDROvX2LkhbY-_SxgMxo3C9kInYXy92_gxov-UXA6umulCNVjf-FN8EGx2P70Yj2T-1ZvX-NiC9gZKIOor27sFCOiLSZw6bPh34UcGiQNHEtqSrGS_4X08ibJd_oMZUGQCuUI6Z7ffSHMptkc01p5pDv9ZVjRnCe4Wl3uUTR5NJH0V6IVRVa1aaVB-zTiAqEOSJShCg_r9tSjJbkqUVSoY0THthZxCb-pTdNhjQnq0aosjoVhXU_grLYzNa-0sk0LKPnQtCL-w_2s7l2iOp82dWkQjz1FBw_X2PLOqUSQF9RM5Xuy0-zOaMRznjnya-CAMmBjffDvDFEq8FzJSXx153Vq79ePTBhGYo_W92VnwEc1LYWPz4JWlqsmx-9TWWvw50kQ3pDSYkNyBy1lKnFlLs-RqTMlGos8MiMz1VgA2zEXD_LZPmqWv9DE_msRAADezmbnO3z8mLjoh_p1Dj5LnnlylV7K8ieCK-_kfrrQNSrmpWnl9_Oh3RRLQWzeIc0yo-DwpUyakjJo9scOOgiENO24vQf15yvHP9pgWC2OjJQgYoQ7EG5b_jeEoixYI",
+			"type": "string"
+		}
+	]
+}
